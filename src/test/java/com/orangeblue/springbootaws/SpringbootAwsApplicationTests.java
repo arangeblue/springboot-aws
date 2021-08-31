@@ -1,4 +1,4 @@
-package com.kyubokwi.springbootaws;
+package com.orangeblue.springbootaws;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
