@@ -1,7 +1,11 @@
 package com.orangeblue.springbootaws.service.posts;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import com.orangeblue.springbootaws.domain.posts.Posts;
 import com.orangeblue.springbootaws.domain.posts.PostsRepository;
+import com.orangeblue.springbootaws.web.dto.PostsListResponseDto;
 import com.orangeblue.springbootaws.web.dto.PostsResponseDto;
 import com.orangeblue.springbootaws.web.dto.PostsSaveRequestDto;
 import com.orangeblue.springbootaws.web.dto.PostsUpdateRequestDto;
@@ -41,4 +45,15 @@ public class PostsService {
         return new PostsResponseDto(entity);
     }
 
+    @Transactional(readOnly = true)
+    public List<PostsListResponseDto> findAllDesc() {
+        return postsRepository.findAllDesc().stream().map(posts -> new PostsListResponseDto(posts))
+                .collect(Collectors.toList());
+    }
+    
+    @Transactional
+    public void delete(Long id) {
+        Posts posts = postsRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + id));
+        postsRepository.delete(posts);
+    }
 }
