@@ -2,6 +2,7 @@ package com.orangeblue.springbootaws.web;
 
 import javax.servlet.http.HttpSession;
 
+import com.orangeblue.springbootaws.config.auth.LoginUser;
 import com.orangeblue.springbootaws.config.auth.dto.SessionUser;
 import com.orangeblue.springbootaws.service.posts.PostsService;
 import com.orangeblue.springbootaws.web.dto.PostsResponseDto;
@@ -22,9 +23,9 @@ public class IndexController {
 
 
     @GetMapping("/")
-    public String index(Model model) {
+    public String index(Model model, @LoginUser SessionUser user) {
         model.addAttribute("posts", postsService.findAllDesc());
-        SessionUser user = (SessionUser) session.getAttribute("user");
+        
 
         if (user != null) {
             model.addAttribute("userName", user.getName());
