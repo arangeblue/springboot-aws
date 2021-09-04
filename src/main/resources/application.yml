@@ -3,13 +3,27 @@ spring:
         hibernate:
             ddl-auto: create
         show-sql: true
+        properties:
+            hibernate: 
+                dialect: org.hibernate.dialect.MySQL57Dialect
+                storage_engine: innodb
 
     profiles:
         include:
+        - real
         - oauth 
-
+        
+        group:
+            local-real: local-real oauth
+            real: real, real-db, oauth
+            real1: real1, real-db, oauth
+            real2: real2, real-db, oauth
+            
     datasource:
         url: jdbc:h2:mem:testdb 
+        hikari:
+            jdbc-url: jdbc:h2:mem:testdb;MODE=MYSQL
+            username: sa
     
     thymeleaf:
         prefix: classpath:templates/
@@ -21,6 +35,12 @@ spring:
 
     session:
         store-type: jdbc
+
+
+
+server:
+    port: 8080
+    
 
                     
 
