@@ -38,7 +38,7 @@ deploy:
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
 
-    bucket: springboot-aws-webservice-build
+    bucket: springboot-aws-webservice
     key: springboot-aws-webservice.zip
 
     bundle_type: zip
@@ -54,4 +54,7 @@ notifications:
   email:
     recipients:
       - wkb1848@gmail.com
+
+
+      # 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
 
