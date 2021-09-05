@@ -7,7 +7,7 @@ spring:
 
     datasource:
         hikari:
-            jdbc-url: jdbc:mariadb://springboot-aws-webservice.cdlwsp88xypb.ap-northeast-2.rds.amazonaws.com:3306/springboot-aws
+            jdbc-url: jdbc:mariadb://springboot-aws-webservice.cdlwsp88xypb.ap-northeast-2.rds.amazonaws.com:3306/springboot_aws_webservice
             username: orangeblue
             password: killyou11!
 
