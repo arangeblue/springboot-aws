@@ -3,7 +3,8 @@ jdk:
   - openjdk11
 
 branches:
-  - master
+  only:
+    - master
 
 
 # travis Ci 서버의 home
@@ -20,4 +21,3 @@ notifications:
     recipients:
       - wkb1848@gmail.com
 
-      
