@@ -20,7 +20,6 @@ before_install:
 
 before_deploy:
   - mkdir -p before-deploy
-  - cd /home/ec2-user/app/step2/zip/
   - cp scripts/*.sh before-deploy/
   - cp appspec.yml before-deploy/
   - cp build/libs/*.jar before-deploy/
@@ -33,32 +32,32 @@ before_deploy:
   - mkdir -p deploy
   - mv springboot-aws-webservice.zip deploy/springboot-aws-webservice.zip
 
-deploy:
-  - provider: s3
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
+# deploy:
+#   - provider: s3
+#     access_key_id: $AWS_ACCESS_KEY
+#     secret_access_key: $AWS_SECRET_KEY
 
-    bucket: springboot-aws-webservice-s3
-    region: ap-northeast-2
-    skip_cleanup: true
-    acl: private
-    local_dir: deploy
-    wait-until-deployed: true
+#     bucket: springboot-aws-webservice-s3
+#     region: ap-northeast-2
+#     skip_cleanup: true
+#     acl: private
+#     local_dir: deploy
+#     wait-until-deployed: true
 
-  - provider: codedeploy
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
+#   - provider: codedeploy
+#     access_key_id: $AWS_ACCESS_KEY
+#     secret_access_key: $AWS_SECRET_KEY
 
-    bucket: springboot-aws-webservice-s3
-    key: springboot-aws-webservice.zip
+#     bucket: springboot-aws-webservice-s3
+#     key: springboot-aws-webservice.zip
 
-    bundle_type: zip
-    application: springboot-aws-webservice
+#     bundle_type: zip
+#     application: springboot-aws-webservice
     
-    deployment_group: springboot-aws-webservice-group
+#     deployment_group: springboot-aws-webservice-group
     
-    region: ap-northeast-2
-    wait-until-deployed: true
+#     region: ap-northeast-2
+#     wait-until-deployed: true
 
 # CI 실행 완료 시 메일로 알람
 notifications:
