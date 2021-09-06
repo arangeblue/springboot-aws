@@ -15,10 +15,11 @@ directories:
 
 script: "./gradlew clean build"
 
-before_install:
-  - chmod +x ./gradlew
+# before_install:
+#   - chmod +x ./gradlew
 
 before_deploy:
+  - chmod +x ./gradlew
   - mkdir -p before-deploy
   - cp scripts/*.sh before-deploy/
   - cp appspec.yml before-deploy/
@@ -27,10 +28,6 @@ before_deploy:
   - cd ../ && mkdir -p deploy
   - mv before-deploy/before-deploy.zip deploy/springboot-aws-webservice.zip
 
-
-  - zip -r springboot-aws-webservice *
-  - mkdir -p deploy
-  - mv springboot-aws-webservice.zip deploy/springboot-aws-webservice.zip
 
 deploy:
   - provider: s3
