@@ -20,7 +20,7 @@ before_install:
 
 before_deploy:
   - mkdir -p before-deploy
-  - cp /home/ec2-user/app/step2/scripts/*.sh before-deploy/
+  - cp scripts/*.sh before-deploy/
   - cp appspec.yml before-deploy/
   - cp build/libs/*.jar before-deploy/
   - cd before-deploy && zip -r before-deploy *
