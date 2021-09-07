@@ -15,3 +15,5 @@ spring:
             - real-db 
 
 
+    config:
+        use-legacy-processing: true

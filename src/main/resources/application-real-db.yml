@@ -12,3 +12,4 @@ spring:
             password: killyou11!
 
             driver-class-name: org.mariadb.jdbc.Driver
+    

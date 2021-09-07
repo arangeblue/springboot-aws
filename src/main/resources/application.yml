@@ -36,9 +36,14 @@ spring:
     session:
         store-type: jdbc
 
+    config:
+        use-legacy-processing: true
 
 server:
     port: 8080
+
+
+
 
     
 
