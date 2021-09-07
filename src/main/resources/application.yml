@@ -1,7 +1,7 @@
 spring:
     jpa:
-        hibernate:
-            ddl-auto: create
+        # hibernate:
+        #     ddl-auto: create
         show-sql: true
         properties:
             hibernate: 
@@ -11,7 +11,7 @@ spring:
     profiles:
         include:
         - real
-        - oauth 
+        - oauth
         
         group:
             local-real: local-real oauth

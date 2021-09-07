@@ -8,3 +8,8 @@ spring:
     
     session:
         store-type: jdbc
+
+    profiles:
+        include:
+            - oauth
+            - real-db 
