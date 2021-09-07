@@ -1,5 +1,3 @@
-server:
-    port: 8081
 
 spring:
     profiles:
@@ -15,3 +13,7 @@ spring:
 
     session:
         store-type: jdbc
+
+
+server:
+    port: 8081

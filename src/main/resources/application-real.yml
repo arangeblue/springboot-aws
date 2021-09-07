@@ -13,3 +13,7 @@ spring:
         include:
             - oauth
             - real-db 
+
+
+server:
+    port: 8080

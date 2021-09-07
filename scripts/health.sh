@@ -37,5 +37,5 @@ do
     fi
 
     echo "> Health check 연결 실패. 재시도 ..."
-    sleep 5
+    sleep 3
 done
