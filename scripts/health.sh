@@ -9,13 +9,13 @@ IDLE_PORT=$(find_idle_port)
 
 echo "> Health Check Start!!"
 echo "> IDLE_PORT: $IDLE_PORT"
-echo "> curl -s http://localhost:$IDLE_PORT/profile "
+echo "> curl -s http://localhost:$IDLE_PORT/profile"
 sleep 5
 
 for RETRY_COUNT in {1..10}
 do
-    RESPONSE=$(curl -s http://localhost:${IDLE_PORT}/profile)
-    UP_COUNT=$(echo ${RESPONSE} | grep 'real' | wc -l)
+    RESPONSE=$( curl -s http://localhost:${IDLE_PORT}/profile )
+    UP_COUNT=$( echo ${RESPONSE} | grep "real" | wc -l )
 
     if [ ${UP_COUNT} -ge 1 ];
     then
