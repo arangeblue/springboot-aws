@@ -28,8 +28,6 @@ before_deploy:
   - cd ../ && mkdir -p deploy
   - mv before-deploy/before-deploy.zip deploy/springboot-aws-webservice.zip 
 
-  
-
 
 deploy:
   - provider: s3
