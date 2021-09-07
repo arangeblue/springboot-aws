@@ -15,5 +15,3 @@ spring:
             - real-db 
 
 
-server:
-    port: 8080
