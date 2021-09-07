@@ -14,7 +14,6 @@ import com.orangeblue.springbootaws.domain.posts.PostsRepository;
 import com.orangeblue.springbootaws.web.dto.PostsSaveRequestDto;
 import com.orangeblue.springbootaws.web.dto.PostsUpdateRequestDto;
 
-import org.aspectj.lang.annotation.Before;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
